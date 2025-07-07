@@ -20,7 +20,7 @@ const router = Router();
 
 router.post('/usuarios/login',login)//para el iniciar sesion
 
-//router.use(verificarToken) // Verificar token para todas las rutas a partir de aquí
+router.use(verificarToken) // Verificar token para todas las rutas a partir de aquí
 
 router.post('/usuarios', crearUsuario) // para crear un usuario
 router.post('/usuarios/salir', logout) // para cerrar sesion
