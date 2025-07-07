@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"lib": ["ESNext"], //version de javascript a la que se compila
+		"target": "ESNext",
+		"moduleResolution": "nodenext",
+		"module": "NodeNext",
+		"rootDir": "./src", //directorio donde están los archivos que escribamos
+		"outDir": "./dist", //directorio donde deja los archivos compilados (npx tsc para compilar la app)
+		"strict": false, //permitir o no tipo any
+		"sourceMap": true, //genera mapas de archivos js
+		"esModuleInterop": true, //facilita importancion de módulos (usar import, default export,etc)
+		"declaration": true, //genera archivos de definición
+		"experimentalDecorators": true, //habilita decoradores para modelos
+		"emitDecoratorMetadata": true //habilita decoradores para modelos
+	},
+	"include": ["src/**/*.ts"] //compilador debe incluir todos los archivos .ts ubicados en src y sus subdirectorios
+}
