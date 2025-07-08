@@ -36,7 +36,7 @@ export const crearArriendo = async (request: Request, response: Response) => {
         })
 
         //respuesta de exito de arriendo creado
-        response.status(201).json(nuevoArriendo)
+        response.status(201).json({message: 'arriendo creado exitosamente'});
     } catch (error) {
         console.error('error en crear arriendo:', error)
         response.status(500).json({ messsage: 'error en el servidor' })
@@ -127,6 +127,17 @@ export const arriendosTerminados = async (request: Request, response: Response) 
         response.status(500).json({ message: 'error en el servidor' })
     }
 }
+//muestra todos Get /api/arriendos/todos
+export const arriendosTodos = async (request: Request, response: Response) => {
+  try {
+    const todosArriendos = await Arriendo.findAll(); // sin filtro trae todos
+    response.status(200).json(todosArriendos);
+  } catch (error) {
+    console.error('Error al obtener todos los arriendos:', error);
+    response.status(500).json({ message: 'Error en el servidor' });
+  }
+};
+
 
 //mostrar arriendos por tipo de vehiculos GET /api/arriendos/tipo/:tipoVehiculo
 export const arriendosoPorTipo = async (request: Request, response: Response) => {

@@ -1,8 +1,11 @@
 import Express from "express"
 import { db } from "./config/db"
 import router from "./router"
+import cors from 'cors'
 
 const server = Express()
+
+server.use(cors());
 
 server.get('/',(request,response)=>{
     response.send('Hola Mundo Cuyeyo')
